@@ -1,0 +1,20 @@
+<paginated-table
+  ng-if="rows.length"
+  rows="rows"
+  columns="formattedColumns"
+  per-page="perPage"
+  sort="sort"
+  show-total="showTotal"
+  totalFunc="totalFunc">
+<!-- editado por edmar moretti -->
+  <div class="agg-table-controls exportar">
+    <small>Exportar:</small>&nbsp;&nbsp;
+    <a class="small" title="Valores numéricos sem formatação" ng-click="aggTable.exportAsCsv(false)">
+      CSV <i aria-hidden="true" class="fa fa-download"></i>
+    </a>&nbsp;&nbsp;&nbsp;
+    <a title="Valores numéricos formatados como 0.000,00" class="small" ng-click="aggTable.exportAsCsv(true)">
+      CSV Formatado <i aria-hidden="true" class="fa fa-download"></i>
+    </a>
+    <paginate-controls></paginate-controls>
+  </div>
+</paginated-table>

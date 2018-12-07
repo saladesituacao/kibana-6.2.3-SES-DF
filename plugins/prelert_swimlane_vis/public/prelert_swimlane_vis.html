@@ -1,0 +1,30 @@
+<div class="prl-swimlane-vis" ng-controller="PrelertSwimlaneVisController">
+  <div style="display:inline-block; width: 100%;">
+    <div style="float:left; display:inline;">
+      <label class="small">Intervalo:</label>
+      <select class="form-control"
+        ng-model="vis.params.interval"
+        ng-options="interval as interval.display for interval in vis.type.visConfig.intervalOptions track by interval.display"
+        ng-change="intervalChanged()">
+      </select>
+      <kbn-info
+        ng-show="vis.params.interval.scaled"
+        placement="bottom"
+        class="text-warning"
+        info="This interval creates {{ vis.params.interval.scale > 1 ? 'buckets that are too large' : 'too many buckets' }} to show in the selected time range, so it has been scaled to {{ vis.params.interval.description }}">
+      </kbn-info>
+      <div ng-show="vis.params.showLegend" class="prl-swimlane-legend-container">
+        <label class="small">Recortes:</label>
+        <div class="prl-swimlane-vis-legend">
+        </div>
+      </div>
+    </div>
+
+    <div style="float:right; display:inline; margin-right: 35px; line-height: 30px;">
+      <img alt="Prelert logo" width="0" height="0" src="{{prelertLogoSrc}}" />
+    </div>
+  </div>
+  <div style="display:flex;">
+    <prl-swimlane-vis style="width: 100%; height: 200px;"></prl-swimlane-vis>
+  </div>
+</div>

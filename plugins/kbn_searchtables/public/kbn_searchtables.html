@@ -1,0 +1,27 @@
+<div ng-controller="KbnSearchTablesVisController" class="kbn-searchtables">
+  <div ng-if="!hasSomeRows && hasSomeRows !== null" class="table-vis-error">
+    <h2 aria-hidden="true"><i aria-hidden="true" class="fa fa-meh-o"></i></h2>
+    <h4>Nenhum resultado encontrado <br>
+      <a ng-click="doSearch($id)">Reinicia a busca</a>
+    </h4>
+  </div>
+  <div ng-if="tableGroups" class="kbn-searchtables-container">
+    <div class="kuiLocalSearch"  class="inputSearchContainer" >
+     <div class="kuiLocalSearchAssistedInput" style="width:100%">
+       <input ng-model="inputSearch" ng-keyup="$event.keyCode == 13 && doSearch($id)" id="inputSearch_{{$id}}" placeholder="Buscar..." class="kuiLocalSearchInput ng-touched inputSearch" autocomplete="off" type="text">
+     </div>
+     <button ng-click="doSearch($id)" aria-label="Search" class="kuiLocalSearchButton inputSearchButton">
+       <span aria-hidden="true" class="kuiIcon fa-search"></span>
+     </button>
+    </div>
+    <kbn-agg-table-group
+      group="tableGroups"
+      export-title="vis.title"
+      per-page="vis.params.perPage"
+      sort="sort"
+      show-total="vis.params.showTotal"
+      total-func="vis.params.totalFunc"
+      ng-if="renderAgain">
+    </kbn-agg-table-group>
+  </div>
+</div>
