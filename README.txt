@@ -1,8 +1,14 @@
-# Modificações feitas para a SES
+# Modifica??es feitas para a SES
 
 ## Arquivo modificados manualmente e mantidos em seus locais originais
 
-pasta kibana/plugins/spy_modes/public/req_resp_stats_spy_mode.js (para não mostrar determinadas opções que expõem o ES)
+pasta kibana/plugins/spy_modes/public/req_resp_stats_spy_mode.js (para n?o mostrar determinadas op??es que exp?em o ES)
+
+### para abrir links em uma p?gina separada
+
+kibana/src/ui/public/directives/rows.js
+
+Observa??o: a URI do link deve conter o par?metro "&modal=true"
 
 ### Para responsividade
 
@@ -10,15 +16,15 @@ pasta kibana/node_modules/react-grid-layout/build/GridItem.js
 pasta kibana/node_modules/react-grid-layout/build/ReactGridLayout.js
 pasta kibana/node_modules/react-grid-layout/build/ResponsiveReactGridLayout.js
 
-### Para tradução
+### Para tradu??o
 
-kibana/src/ui/public/agg_types/metrics (alterados vários arquivos para tradução)
+kibana/src/ui/public/agg_types/metrics (alterados v?rios arquivos para tradu??o)
 kibana/src/ui/public/filter_bar/filter_bar.html
 kibana/src/core_plugins/metrics/common
 kibana/src/core_plugins/metrics/public/components/aggs
 kibana/src/ui/public/agg_response/hierarchical
 
-## Tradução via linha de comando
+## Tradu??o via linha de comando
 
 find . -type f -name "*.html" -print0 | xargs -0 sed -i '' -e 's/Raw <i aria-hidden="true" class="fa fa-download"><\/i>/Txt <i aria-hidden="true" class="fa fa-download"><\/i>/g'
 find . -type f -name "*.html" -print0 | xargs -0 sed -i '' -e 's/Formatted <i aria-hidden="true" class="fa fa-download"><\/i>/Formatado <i aria-hidden="true" class="fa fa-download"><\/i>/g'

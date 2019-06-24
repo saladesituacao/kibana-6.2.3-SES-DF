@@ -90,7 +90,26 @@ module.directive('kbnRows', function ($compile, $rootScope, getAppState, Private
             $cellContent.prepend(contents);
           }
         }
-
+        //editado por edmar moretti
+          var celula = $cell.find("a");
+          if(celula.is("a") && celula.attr('href') != undefined && celula.attr('href').indexOf("modal=true") > 0){
+            celula.click(function(event){
+              event.stopPropagation();
+              /*
+              var div = $("<div>").addClass("filterEditor kuiModal").css({"width":"98vw","height":"98vh"});
+              var cabecalho = $("<div>").addClass("kuiModalHeader").html('<div class="kuiModalHeader__title">Cabeçalho</div><button class="kuiModalHeaderCloseButton kuiIcon fa-times" ></button>');
+              var body = $("<div>").addClass("kuiModalBody").html("<iframe style='width:100%;height:80vh;overflow:auto' src='" + event.target.href + "' >");
+              var footer = $("<div>").addClass("kuiModalFooter kuiBar").html('<div class="kuiBarSection"><button class="kuiButton kuiButton--basic" >Cancelar</button></div>');
+              cabecalho.click(function(){div.remove();});
+              footer.click(function(){div.remove();});
+              div.prepend(cabecalho,body);
+              $("body").prepend(div);
+              */
+              window.open(event.target.href.replace("&modal=true",""), "_blank", "toolbar=no,location=no,scrollbars=yes,resizable=yes,top=0,left=0,width=800,height=800");
+              void(0);
+              return false;
+            });
+          }
         $tr.append($cell);
       }
 

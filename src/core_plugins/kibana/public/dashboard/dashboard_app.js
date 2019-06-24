@@ -281,7 +281,11 @@ app.directive('dashboardApp', function ($injector) {
       };
 
       $scope.showFilterBar = () => filterBar.getFilters().length > 0 || !dashboardStateManager.getFullScreenMode();
-
+      //incluido por edmar moretti
+      if(window.location.href.search("nofilterbar=true") > 0){
+        $scope.showFilterBar = () => false;
+      }
+      //
       $scope.showAddPanel = () => {
         dashboardStateManager.setFullScreenMode(false);
         $scope.kbnTopNav.open('add');

@@ -1,0 +1,17 @@
+{
+  "name": "cohort",
+  "version": "6.2.3",
+  "description": "Cohort Analysis plugin built with love at Elo7",
+  "main": "index.js",
+  "kibana": {
+    "version": "6.2.3"
+  },
+  "build": {
+    "git": {
+      "count": "70",
+      "sha": "df7061d",
+      "date": "Mon, 16 Apr 2018 17:11:22 -0300"
+    },
+    "date": "Mon Apr 16 2018 17:11:39 GMT-0300 (BRT)"
+  }
+}

@@ -104,6 +104,6 @@ export function AggResponseTabifyProvider(Private, Notifier) {
 
     write.aggStack.unshift(agg);
   }
-
+  //editado por edmar moretti
   return notify.timed('tabify agg response', tabifyAggResponse);
 }

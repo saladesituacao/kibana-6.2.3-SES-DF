@@ -15,7 +15,6 @@ exports.default = function (plugin, server) {
     return callWithInternalUser('ping').catch(function (err) {
       if (!(err instanceof NoConnections)) throw err;
       plugin.status.red(`Unable to connect to Elasticsearch at ${url}.`);
-
       return _bluebird2.default.delay(REQUEST_DELAY).then(waitForPong.bind(null, callWithInternalUser, url));
     });
   }
@@ -49,7 +48,7 @@ exports.default = function (plugin, server) {
         return waitForPong(callDataAsKibanaUser, tribeUrl).then(() => (0, _ensure_es_version.ensureEsVersion)(server, _kibana_version2.default.get(), callDataAsKibanaUser));
       }
     });
-
+//erro esta aqui edmar moretti
     return healthCheck.then(setGreenStatus).catch(err => plugin.status.red(err));
   }
 

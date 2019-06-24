@@ -65,20 +65,18 @@ export class DashboardPanel extends React.Component {
     });
     //editado por edmar moretti
     //console.info(this.props.panel.notShowInMobile)
-    
+
     //if(parseInt(document.all?document.body.clientWidth:window.innerWidth,10) < 992){
-    
+
     if(parseInt(document.all?document.body.clientWidth:window.innerWidth,10) < 992 && this.props.panel.notShowInMobile != undefined && this.props.panel.notShowInMobile == true){
-		console.log("dashboard_panel.js 72");
 		return (
-		<div 
+		<div
 			className="hidden"
 			notShowInMobile={this.props.panel.notShowInMobile}
 		>
 		</div>
 		);
 	} else {
-		console.log("dashboard_panel.js 80");
 		return (
 		  <div
 			className="dashboard-panel"

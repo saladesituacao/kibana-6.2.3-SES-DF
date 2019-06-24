@@ -98,7 +98,8 @@ export class DashboardGrid extends React.Component {
       if (!panel.version) {
         PanelUtils.convertOldPanelData(panel);
       }
-      //console.info(panel)
+      //console.info("----------");
+      //console.info(panel);
       return panel.gridData;
     });
   }

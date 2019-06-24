@@ -176,7 +176,7 @@ export function BaseMapsVisualizationProvider(serviceSettings) {
         }
       }
       //editado por edmar moretti
-      tmsLayer.url = "http://tile.openstreetmap.org/{z}/{x}/{y}.png";
+      tmsLayer.url = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
       const url = tmsLayer.url;
       const options = _.cloneDeep(tmsLayer);
       delete options.id;

@@ -623,13 +623,16 @@ function createGroupLogger(type, opts) {
 
     if (consoleGroups) {
       if (status) {
-        console.log(status);
-        console.groupEnd();
+        //editado por edmar moretti
+        //console.log(status);
+        //console.groupEnd();
       } else {
         if (opts.open) {
-          console.group(name);
+          //editado por edmar moretti
+          //console.group(name);
         } else {
-          console.groupCollapsed(name);
+          //editado por edmar moretti
+          //console.groupCollapsed(name);
         }
       }
     } else {
@@ -662,4 +665,3 @@ function createGroupLogger(type, opts) {
     return ret;
   };
 }
-
